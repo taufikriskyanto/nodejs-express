@@ -19,13 +19,10 @@ test("Response Status Unit Test", async ()=>{
     .query({name: 'Taufik'});
     console.log(`${response.status}`)
     expect(response.status).toBe(200);
-});
 
 
-test("Response Status 2 Unit Test", async ()=>{
-
-    const response = await request(app)
+    const response2= await request(app)
     .get("/");
-    console.log(`${response.status}`)
-    expect(response.status).toBe(400);
+    console.log(`${response2.status}`)
+    expect(response2.status).toBe(400);
 });
