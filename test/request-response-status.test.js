@@ -6,10 +6,23 @@ const app = express();
 
 
 app.get("/", (req, res)=>{
+    if(req.query.name){
+        res.status(200).send(`Hello ${req.query.name}`)
+    }
     res.status(400).send("Hello World")
 });
 
-test("Request Url Unit Test", async ()=>{
+test("Response Status Unit Test", async ()=>{
+
+    const response = await request(app)
+    .get("/")
+    .query({name: 'Taufik'});
+    console.log(`${response.status}`)
+    expect(response.status).toBe(200);
+});
+
+
+test("Response Status 2 Unit Test", async ()=>{
 
     const response = await request(app)
     .get("/");
