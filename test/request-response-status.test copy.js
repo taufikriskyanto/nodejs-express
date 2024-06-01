@@ -8,8 +8,11 @@ const app = express();
 app.get("/", (req, res)=>{
     if(req.query.name){
         res.status(200).send(`Hello ${req.query.name}`)
+    }else{
+        res.status(400);
+        res.end();
     }
-    res.status(400).send("Hello World")
+    
 });
 
 test("Response Status Unit Test", async ()=>{
