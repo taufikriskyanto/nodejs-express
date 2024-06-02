@@ -26,6 +26,7 @@ const requestTimeMiddleware  = (req, res, next) =>{
     next();
 }
 const app = express();
+//Note Middleware selalu di execute secara berurutan.
 app.use(logger);
 app.use(apiKeyMiddleware);
 app.use(addPoweredHeader);
