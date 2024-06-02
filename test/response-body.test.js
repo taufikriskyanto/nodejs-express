@@ -12,7 +12,7 @@ app.get("/", (req, res)=>{
    res.send('<html> <head> <title> HELLO WORLD </title> </head> </html>')
 });
 
-test("Response Header Unit Test", async ()=>{
+test("Response Body Unit Test", async ()=>{
 
 
     const response2= await request(app)

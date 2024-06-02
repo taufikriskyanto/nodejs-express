@@ -9,7 +9,7 @@ app.get("/", (req, res)=>{
     res.send("Hello World")
 });
 
-test("Request Url Unit Test", async ()=>{
+test("Response Url Unit Test", async ()=>{
 
     const response = await request(app)
     .get("/");
